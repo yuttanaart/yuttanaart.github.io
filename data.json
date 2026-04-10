@@ -16,22 +16,27 @@
       "พลุ ดอกไม้ไฟ บอกไฟในงานศพ พิธีต่างๆ"
     ],
     "extra": "มีรถ รับ-ส่ง ผู้ป่วยและศพไว้บริการ",
-    "image": "img/portfolio/work/image_01.jpg"
+    "image": "img/portfolio/gallery/prasat-thong-daeng-01.jpg"
   },
 
   "slides": [
     {
-      "bg": "sliderimages/slide-b-bg2.png",
+      "image": "img/portfolio/gallery/prasat-khao-03.jpg",
       "heading": "จำหน่ายโลงศพทุกชนิด<br/>ในราคากันเอง",
+      "subtext": "ปราสาท ศาลา เรือนทาน พวงหรีด ครบทุกประเภท",
       "badge": "ปลีกและส่ง"
     },
     {
-      "bg": "sliderimages/slide-b-1.png",
-      "heading": "ทางร้านเรายังมีบริการ",
-      "lines": [
-        "สำหรับลูกค้าที่ต้องการจะทำบุญ บริจาคโลงศพ (ศพคนไร้ญาติ)",
-        "ทำบุญสะเดาะเคราะห์ ต่อดวงชะตา แก้ปีชง ให้กับลูกค้าที่สนใจบริการด้วยค่ะ"
-      ]
+      "image": "img/portfolio/gallery/long-ngan-sop-01.jpg",
+      "heading": "บริการครบวงจร<br/>24 ชั่วโมง",
+      "subtext": "มีรถรับ-ส่งผู้ป่วยและศพ พร้อมให้บริการ",
+      "badge": "โทรหาเราได้เลย"
+    },
+    {
+      "image": "img/portfolio/gallery/prasat-thong-daeng-01.jpg",
+      "heading": "ทำบุญสะเดาะเคราะห์<br/>ต่อดวงชะตา แก้ปีชง",
+      "subtext": "บริจาคโลงศพ ศพคนไร้ญาติ",
+      "badge": "บริการด้วยใจ"
     }
   ],
 
@@ -63,15 +68,15 @@
   ],
 
   "serviceImages": [
-    { "src": "img/portfolio/service/img_002.png", "alt": "โลงศพ" },
-    { "src": "img/portfolio/service/img_001.png", "alt": "ปราสาท" },
-    { "src": "img/portfolio/service/img_004.png", "alt": "ศาลา" }
+    { "src": "img/portfolio/gallery/long-sak-thong-01.jpg", "alt": "โลงศพไม้สักลายทอง" },
+    { "src": "img/portfolio/gallery/prasat-thong-daeng-02.jpg", "alt": "ปราสาทสีทอง-แดง" },
+    { "src": "img/portfolio/gallery/sala-daeng-rot-01.jpg", "alt": "ศาลาสีแดง" }
   ],
 
   "carouselImages": [
-    "img/portfolio/work/image_02-horz.jpg",
-    "img/portfolio/work/image_01x800.jpg",
-    "img/portfolio/work/image_05-tile.jpg"
+    "img/portfolio/gallery/prasat-khao-thong-01.jpg",
+    "img/portfolio/gallery/prasat-khao-thong-04.jpg",
+    "img/portfolio/gallery/prasat-khao-02.jpg"
   ],
 
   "boon": {

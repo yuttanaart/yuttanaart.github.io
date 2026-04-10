@@ -48,30 +48,29 @@
     );
   }
 
-  /* ===== RENDER: SLIDES ===== */
+  /* ===== RENDER: HERO CAROUSEL ===== */
   function renderSlides(slides) {
-    var html = slides.map(function (slide, i) {
-      var inner = '';
-      if (slide.heading) {
-        inner += '<p class="ls-l" style="top:140px;left:125px;font-weight:300;height:40px;padding-right:10px;padding-left:10px;font-size:36px;line-height:37px;color:#fff;white-space:nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:1500;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% top 0;offsetxout:-600;">' + slide.heading + '</p>';
-      }
-      if (slide.badge) {
-        inner += '<a class="btn pi-btn-default ls-s-1" href="#" style="padding:9px 20px;font-size:20px;top:240px;left:135px;white-space:nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:2000;easingin:easeOutElastic;rotatexin:-90;transformoriginin:50% top 0;offsetxout:-200;durationout:1000;parallaxlevel:3;">' + slide.badge + '</a>';
-      }
-      if (slide.lines) {
-        slide.lines.forEach(function (line, li) {
-          inner += '<p class="ls-l" style="top:' + (80 + li * 90) + 'px;left:730px;font-size:22px;color:#fff;white-space:nowrap;" data-ls="offsetxin:0;durationin:2000;delayin:' + (1500 + li * 500) + ';easingin:easeOutElastic;">' + line + '</p>';
-        });
-      }
-      var nextSlide = i === 0 ? 2 : 1;
-      inner +=
-        '<img class="ls-l ls-linkto-' + nextSlide + '" style="top:320px;left:135px;" data-ls="offsetxin:-50;delayin:1000;offsetxout:-50;parallaxlevel:3;" src="sliderimages/left.png">' +
-        '<img class="ls-l ls-linkto-' + nextSlide + '" style="top:320px;left:175px;" data-ls="offsetxin:50;delayin:1000;offsetxout:50;parallaxlevel:3;" src="sliderimages/right.png">';
-
-      return '<div class="ls-slide" data-ls="transition2d:95;timeshift:-1000;"><img src="' + slide.bg + '" class="ls-bg" alt=""/>' + inner + '</div>';
+    var indicators = slides.map(function (_, i) {
+      return '<li data-target="#hero-carousel" data-slide-to="' + i + '"' + (i === 0 ? ' class="active"' : '') + '></li>';
     }).join('');
 
-    $('#layerslider').html(html);
+    var slideHtml = slides.map(function (slide, i) {
+      return (
+        '<div class="item hero-slide' + (i === 0 ? ' active' : '') + '" style="background-image:url(' + slide.image + ');">' +
+          '<div class="hero-overlay"></div>' +
+          '<div class="hero-content">' +
+            '<div class="hero-text animated fadeInLeft">' +
+              '<h1>' + slide.heading + '</h1>' +
+              '<p>' + slide.subtext + '</p>' +
+              '<a href="#service" class="btn hero-btn">' + slide.badge + '</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join('');
+
+    $('#hero-indicators').html(indicators);
+    $('#hero-slides').html(slideHtml);
   }
 
   /* ===== RENDER: SERVICE ICONS ===== */
@@ -268,14 +267,8 @@
 
   /* ===== INIT JQUERY PLUGINS (after DOM is ready) ===== */
   function initPlugins() {
-    // LayerSlider
-    $('#layerslider').layerSlider({
-      responsive: false,
-      responsiveUnder: 1280,
-      layersContainer: 1280,
-      skin: 'noskin',
-      hoverPrevNext: false
-    });
+    // Bootstrap Hero Carousel
+    $('#hero-carousel').carousel({ interval: 5000, pause: 'hover' });
 
     // Owl Carousel
     $('.owl-carousel.owl-item-1').owlCarousel({
