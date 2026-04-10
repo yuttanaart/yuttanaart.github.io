@@ -39,6 +39,7 @@ body {
   box-shadow: 0 2px 20px rgba(0,0,0,0.35) !important;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  z-index: 1000 !important;
 }
 
 /* Force white text on dark navbar when scrolled */
@@ -769,17 +770,10 @@ h5.uppercase::after {
   font-family: Kanit, serif;
 }
 
-@media (max-width: 992px) {
-  .gallery-item { width: 33.333%; }
-}
-@media (max-width: 600px) {
-  .gallery-item { width: 50%; }
-}
-
 /* Lightbox */
 .lightbox-overlay {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.88);
   z-index: 9999;
   display: flex;
@@ -858,8 +852,8 @@ h5.uppercase::after {
   }
 
   /* --- Hero Banner --- */
-  #hero-carousel .carousel-inner { height: 300px; }
-  #hero-carousel .hero-slide      { height: 300px; }
+  #hero-carousel .carousel-inner { height: 350px; }
+  #hero-carousel .hero-slide      { height: 350px; }
 
   .hero-content { padding: 0 16px; }
 

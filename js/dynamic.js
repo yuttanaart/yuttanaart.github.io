@@ -23,6 +23,12 @@
     })
     .fail(function () {
       console.error('ไม่สามารถโหลด data.json ได้');
+      $('#about-content').html(
+        '<div class="col-sm-12 text-center" style="padding:40px 0;">' +
+          '<i class="fa fa-exclamation-triangle" style="font-size:40px;color:#c0392b;"></i>' +
+          '<p style="margin-top:16px;">ขออภัย ไม่สามารถโหลดข้อมูลได้<br>กรุณารีเฟรชหน้าใหม่อีกครั้ง</p>' +
+        '</div>'
+      );
     });
 
   /* ===== RENDER: ABOUT ===== */
@@ -174,6 +180,7 @@
 
     // Lightbox on click
     $(document).on('click', '.gallery-card', function () {
+      $('#lightbox').remove(); // prevent duplicate lightboxes
       var src = $(this).find('img').attr('src');
       var title = $(this).find('.gallery-overlay span').text();
       $('body').append(
@@ -273,9 +280,10 @@
     // Owl Carousel
     $('.owl-carousel.owl-item-1').owlCarousel({
       singleItem: true,
-      autoPlay: true,
+      autoPlay: 3000,
       navigation: false,
-      pagination: true
+      pagination: true,
+      stopOnHover: true
     });
 
     // WOW animations
