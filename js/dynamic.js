@@ -302,16 +302,7 @@
 
   /* ===== SCROLL BEHAVIORS ===== */
   function initScrollBehaviors() {
-    // Navbar scroll effect
-    function handleNavbarScroll() {
-      if ($(window).scrollTop() > 60) {
-        $('.navbar.navbar-default').addClass('navbar-scrolled');
-      } else {
-        $('.navbar.navbar-default').removeClass('navbar-scrolled');
-      }
-    }
-    $(window).on('scroll.navbar', handleNavbarScroll);
-    handleNavbarScroll();
+    // Navbar is fixed white — no scroll color change
 
     // Smooth scroll for anchor links
     $(document).on('click', 'a[href^="#"]', function (e) {

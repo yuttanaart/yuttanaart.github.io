@@ -34,26 +34,7 @@ body {
   padding-top: 60px;
 }
 
-.navbar-scrolled {
-  background: rgba(26, 26, 46, 0.97) !important;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.35) !important;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  z-index: 1000 !important;
-}
-
-/* Force white text on dark navbar when scrolled */
-.navbar-scrolled .zetta-menu > li > a,
-.navbar-scrolled .zetta-menu > li > span,
-.navbar-scrolled ul.zetta-menu li a,
-.navbar-scrolled ul.zetta-menu li span {
-  color: #ffffff !important;
-}
-
-.navbar-scrolled .zetta-menu > li > a:hover,
-.navbar-scrolled ul.zetta-menu li a:hover {
-  color: var(--accent) !important;
-}
+/* Navbar stays white always — no color change on scroll */
 
 /* ===== HERO BANNER ===== */
 #hero-banner {
