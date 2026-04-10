@@ -21,22 +21,34 @@
 
   "slides": [
     {
-      "image": "img/portfolio/gallery/prasat-khao-03.jpg",
-      "heading": "จำหน่ายโลงศพทุกชนิด<br/>ในราคากันเอง",
-      "subtext": "ปราสาท ศาลา เรือนทาน พวงหรีด ครบทุกประเภท",
-      "badge": "ปลีกและส่ง"
-    },
-    {
-      "image": "img/portfolio/gallery/long-ngan-sop-01.jpg",
-      "heading": "บริการครบวงจร<br/>24 ชั่วโมง",
-      "subtext": "มีรถรับ-ส่งผู้ป่วยและศพ พร้อมให้บริการ",
-      "badge": "โทรหาเราได้เลย"
+      "image": "img/portfolio/gallery/shop-branch2.jpg",
+      "heading": "ยุทธนาศิลป์<br/>เปิดให้บริการมากกว่า 20 ปี",
+      "subtext": "จำหน่าย โลงศพ ปราสาท ศาลา พวงหรีด ปลีกและส่ง",
+      "badge": "เปิด 24 ชั่วโมง"
     },
     {
       "image": "img/portfolio/gallery/prasat-thong-daeng-01.jpg",
-      "heading": "ทำบุญสะเดาะเคราะห์<br/>ต่อดวงชะตา แก้ปีชง",
-      "subtext": "บริจาคโลงศพ ศพคนไร้ญาติ",
-      "badge": "บริการด้วยใจ"
+      "heading": "ปราสาทและศาลา<br/>ทุกชนิด",
+      "subtext": "ปราสาท ศาลา เรือนทาน งานฝีมือคุณภาพสูง",
+      "badge": "ดูสินค้า"
+    },
+    {
+      "image": "img/portfolio/gallery/long-sak-thong-01.jpg",
+      "heading": "โลงศพไม้สักคุณภาพ<br/>ราคากันเอง",
+      "subtext": "โลงศพทุกชนิด ไม้สัก สีทอง สีขาว ปลีกและส่ง",
+      "badge": "ดูสินค้า"
+    },
+    {
+      "image": "img/portfolio/gallery/prasat-khao-03.jpg",
+      "heading": "บริการจัดงานศพ<br/>ครบวงจร",
+      "subtext": "พร้อมดูแลทุกขั้นตอน ด้วยความเอาใจใส่",
+      "badge": "ติดต่อเรา"
+    },
+    {
+      "image": "img/portfolio/gallery/long-ngan-sop-01.jpg",
+      "heading": "บริการรับ-ส่งศพ<br/>24 ชั่วโมง",
+      "subtext": "มีรถรับ-ส่งผู้ป่วยและศพ พร้อมให้บริการตลอดเวลา",
+      "badge": "โทรหาเราได้เลย"
     }
   ],
 
