@@ -13,6 +13,7 @@
       renderServiceIcons(data.services);
       renderServiceImages(data.serviceImages);
       renderBoon(data.boon, data.carouselImages);
+      renderGallery(data.gallery);
       renderMap(data.map);
       renderParallax(data.parallax);
       renderFooter(data.branches, data.contacts, data.site);
@@ -127,6 +128,70 @@
         '</div>' +
       '</div>'
     );
+  }
+
+  /* ===== RENDER: GALLERY ===== */
+  function renderGallery(gallery) {
+    // Filter buttons
+    var filterHtml = '<button class="gallery-btn active" data-filter="all">ทั้งหมด</button>';
+    gallery.forEach(function (cat) {
+      filterHtml += '<button class="gallery-btn" data-filter="' + cat.filter + '">' + cat.category + '</button>';
+    });
+    $('#gallery-filters').html(filterHtml);
+
+    // Grid items
+    var gridHtml = '';
+    gallery.forEach(function (cat) {
+      cat.items.forEach(function (item) {
+        gridHtml +=
+          '<div class="gallery-item" data-cat="' + cat.filter + '">' +
+            '<div class="gallery-card">' +
+              '<img src="' + item.src + '" alt="' + item.title + '" loading="lazy"/>' +
+              '<div class="gallery-overlay">' +
+                '<span>' + item.title + '</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+      });
+    });
+    $('#gallery-grid').html(gridHtml);
+
+    // Filter click
+    $(document).on('click', '.gallery-btn', function () {
+      var filter = $(this).data('filter');
+      $('.gallery-btn').removeClass('active');
+      $(this).addClass('active');
+
+      if (filter === 'all') {
+        $('.gallery-item').fadeIn(300);
+      } else {
+        $('.gallery-item').hide();
+        $('.gallery-item[data-cat="' + filter + '"]').fadeIn(300);
+      }
+    });
+
+    // Lightbox on click
+    $(document).on('click', '.gallery-card', function () {
+      var src = $(this).find('img').attr('src');
+      var title = $(this).find('.gallery-overlay span').text();
+      $('body').append(
+        '<div id="lightbox" class="lightbox-overlay">' +
+          '<div class="lightbox-box">' +
+            '<button class="lightbox-close">&times;</button>' +
+            '<img src="' + src + '" alt="' + title + '"/>' +
+            '<p>' + title + '</p>' +
+          '</div>' +
+        '</div>'
+      );
+      setTimeout(function () { $('#lightbox').addClass('active'); }, 10);
+    });
+
+    $(document).on('click', '.lightbox-overlay, .lightbox-close', function (e) {
+      if ($(e.target).hasClass('lightbox-overlay') || $(e.target).hasClass('lightbox-close')) {
+        $('#lightbox').removeClass('active');
+        setTimeout(function () { $('#lightbox').remove(); }, 300);
+      }
+    });
   }
 
   /* ===== RENDER: MAP ===== */
