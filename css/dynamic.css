@@ -35,15 +35,23 @@ body {
 }
 
 .navbar-scrolled {
-  background: rgba(26, 26, 46, 0.96) !important;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important;
-  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 46, 0.97) !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.35) !important;
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
+/* Force white text on dark navbar when scrolled */
 .navbar-scrolled .zetta-menu > li > a,
-.navbar-scrolled .zetta-menu > li > span {
-  color: #fff !important;
+.navbar-scrolled .zetta-menu > li > span,
+.navbar-scrolled ul.zetta-menu li a,
+.navbar-scrolled ul.zetta-menu li span {
+  color: #ffffff !important;
+}
+
+.navbar-scrolled .zetta-menu > li > a:hover,
+.navbar-scrolled ul.zetta-menu li a:hover {
+  color: var(--accent) !important;
 }
 
 /* ===== HERO BANNER ===== */
@@ -125,35 +133,51 @@ body {
   color: #fff !important;
 }
 
-/* Carousel controls */
+/* Carousel controls — override Bootstrap 3 defaults */
 .carousel-control.hero-prev,
 .carousel-control.hero-next {
-  width: 50px;
-  height: 50px;
-  background: rgba(255,255,255,0.15) !important;
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 1;
+  position: absolute !important;
+  top: 50% !important;
+  bottom: auto !important;
+  width: 46px !important;
+  height: 46px !important;
+  margin-top: -23px;
+  border-radius: 50% !important;
+  background: rgba(255,255,255,0.2) !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
   transition: var(--transition);
-  backdrop-filter: blur(4px);
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  border: 2px solid rgba(255,255,255,0.4);
 }
 
-.carousel-control.hero-prev { left: 20px; }
-.carousel-control.hero-next { right: 20px; }
+.carousel-control.hero-prev { left: 20px !important; right: auto !important; }
+.carousel-control.hero-next { right: 20px !important; left: auto !important; }
 
 .carousel-control.hero-prev:hover,
 .carousel-control.hero-next:hover {
   background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  opacity: 1 !important;
 }
 
 .carousel-control.hero-prev span,
 .carousel-control.hero-next span {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1;
+  color: #fff;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
 }
 
 /* Carousel indicators */
@@ -860,12 +884,13 @@ h5.uppercase::after {
 
   .carousel-control.hero-prev,
   .carousel-control.hero-next {
-    width: 36px;
-    height: 36px;
+    width: 36px !important;
+    height: 36px !important;
+    margin-top: -18px;
   }
 
-  .carousel-control.hero-prev { left: 8px; }
-  .carousel-control.hero-next { right: 8px; }
+  .carousel-control.hero-prev { left: 8px !important; }
+  .carousel-control.hero-next { right: 8px !important; }
 
   /* --- About Section --- */
   #about-content .col-sm-6 {
