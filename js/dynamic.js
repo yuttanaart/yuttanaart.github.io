@@ -56,10 +56,10 @@
 
     var slideHtml = slides.map(function (slide, i) {
       return (
-        '<div class="item hero-slide' + (i === 0 ? ' active' : '') + '" style="background-image:url(' + slide.image + ');">' +
+        '<div class="item hero-slide' + (i === 0 ? ' active' : '') + '" style="background-image:url(\'' + slide.image + '\');">' +
           '<div class="hero-overlay"></div>' +
           '<div class="hero-content">' +
-            '<div class="hero-text animated fadeInLeft">' +
+            '<div class="hero-text">' +
               '<h1>' + slide.heading + '</h1>' +
               '<p>' + slide.subtext + '</p>' +
               '<a href="#service" class="btn hero-btn">' + slide.badge + '</a>' +
@@ -71,6 +71,9 @@
 
     $('#hero-indicators').html(indicators);
     $('#hero-slides').html(slideHtml);
+
+    // Init Bootstrap Carousel AFTER slides are injected
+    $('#hero-carousel').carousel({ interval: 5000, pause: 'hover' });
   }
 
   /* ===== RENDER: SERVICE ICONS ===== */
@@ -145,7 +148,7 @@
         gridHtml +=
           '<div class="gallery-item" data-cat="' + cat.filter + '">' +
             '<div class="gallery-card">' +
-              '<img src="' + item.src + '" alt="' + item.title + '" loading="lazy"/>' +
+              '<img src="' + item.src + '" alt="' + item.title + '"/>' +
               '<div class="gallery-overlay">' +
                 '<span>' + item.title + '</span>' +
               '</div>' +
@@ -267,9 +270,6 @@
 
   /* ===== INIT JQUERY PLUGINS (after DOM is ready) ===== */
   function initPlugins() {
-    // Bootstrap Hero Carousel
-    $('#hero-carousel').carousel({ interval: 5000, pause: 'hover' });
-
     // Owl Carousel
     $('.owl-carousel.owl-item-1').owlCarousel({
       singleItem: true,
